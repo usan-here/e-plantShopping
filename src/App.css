@@ -1,126 +1,138 @@
-/* ---------------------------------
-   GLOBAL
----------------------------------- */
-.app-container {
-    min-height: 100vh;
-    width: 100%;
-    overflow-x: hidden; /* prevent sideways scroll only */
-    font-family: "Poppins", sans-serif;
-  }
-  
-  
-  /* ---------------------------------
-     LANDING PAGE
-  ---------------------------------- */
-  .landing-page {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow-y: auto; /* FIX: allow vertical scrolling */
-  }
-  
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  
-    background-image: url("https://cdn.pixabay.com/photo/2016/11/20/09/03/background-1847099_1280.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  
-    filter: brightness(0.55);
-    z-index: -1;
-  }
-  
+/* LandingPage.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.landing-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  filter: brightness(0.8);
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+ top: 100px;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0,0,0,0.5);
+  gap: 20px;
+}
+
+.landing_content {
+ margin-top: 430px;
+  margin-left: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  /* background-color: red; */
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.content p,
+.content h1 {
+  color: white;
+}
+
+.content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 25px;
+}
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background-color: #4caf50;
+  margin: 10px 0;
+}
+
+.get-started-button {
+  padding: 15px 25px;
+  font-size: 23px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 40px;
+}
+
+.get-started-button:hover {
+  background-color: #45a049;
+}
+
+/* ProductList.css */
+
+.product-list-container {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;  /* allow page to grow */
+        overflow-x: hidden;
+        padding-top: 50px;
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+      
+
+.product-list-container.visible {
+  top: 0;
+}
+/* LandingPage.css */
+@media screen and (max-width: 768px) {
   .content {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 20px;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .landing_content {
+    margin-top: 100px; /* Adjust as needed */
+    margin-left: 0;
+    width: 80%; /* Adjust as needed */
     text-align: center;
   }
-  
-  
-  /* ---------------------------------
-     LANDING MAIN TEXT
-  ---------------------------------- */
-  .landing_content {
-    max-width: 800px;
-    margin-bottom: 50px;
-    color: white;
-  }
-  
-  .landing_content h1 {
-    font-size: 48px;
-    margin-bottom: 12px;
-    font-weight: 700;
-  }
-  
-  .divider {
-    width: 120px;
-    height: 4px;
-    background: #4caf50;
-    margin: 15px auto;
-    border-radius: 4px;
-  }
-  
-  .landing_content p {
-    font-size: 22px;
-    margin-bottom: 25px;
-    opacity: 0.9;
-  }
-  
-  
-  /* ---------------------------------
-     GET STARTED BUTTON
-  ---------------------------------- */
-  .get-started-button {
-    padding: 14px 30px;
-    font-size: 18px;
-    border-radius: 12px;
-    background: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  
-    transition: background 0.2s ease, transform 0.2s ease;
-  }
-  
-  .get-started-button:hover {
-    background: #388e3c;
-    transform: translateY(-2px);
-  }
-  
-  
-  /* ---------------------------------
-     ABOUT US CONTAINER
-  ---------------------------------- */
+
   .aboutus_container {
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 40px;
-    padding: 0 20px;
+    margin-top: 20px; /* Adjust as needed */
+    width: 80%; /* Adjust as needed */
   }
-  
-  
-  /* ---------------------------------
-     RESPONSIVE
-  ---------------------------------- */
-  @media (max-width: 768px) {
-    .landing_content h1 {
-      font-size: 34px;
-    }
-  
-    .landing_content p {
-      font-size: 18px;
-    }
-  
-    .get-started-button {
-      font-size: 16px;
-      padding: 12px 22px;
-    }
+}
+
+@media screen and (max-width: 480px) {
+  .landing_content {
+    margin-top: 50px; /* Adjust as needed */
+    width: 90%; /* Adjust as needed */
   }
-  
+
+  .aboutus_container {
+    width: 90%; /* Adjust as needed */
+  }
+}

@@ -9,23 +9,40 @@
   .category-section {
     margin-bottom: 50px;
     text-align: center;
+    
   }
   
   .category-section h2 {
-    font-size: 32px;
-    margin-bottom: 25px;
-    color: #2e7d32;
+    text-align: center;
+    font-size: 36px;
     font-weight: bold;
-  }
-  
-  /* GRID */
-  .category-grid {
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block; /* shrink to content width */
+}
+
+/* Decorative bar below category name */
+.category-section h2::after {
+    content: "";
+    display: block;
+    width: 200px; /* length of the bar */
+    height: 4px; /* thickness of the bar */
+    background-color: #4CAF50; /* green color matching theme */
+    margin: 10px auto 0 auto; /* center the bar under text */
+    border-radius: 2px; /* slightly rounded ends */
+}
+
+/* GRID */
+.category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 25px;
-    padding: 0 20px;
-  }
-  
+    padding: 30px;
+    width: 80%;           /* width of the grid */
+    margin: 0 auto;       /* centers the grid horizontally */
+    justify-content: center; /* optional: centers items in last row if not full */
+}
+
   /* ------------------------------
      PRODUCT CARD
   ------------------------------ */
@@ -64,10 +81,10 @@
     margin-bottom: 6px;
   }
   
-  .product-price {
+  .product-card .product-price {
     font-size: 18px;
     font-weight: bold;
-    color: #2e7d32;
+    color: red;
     margin: 10px 0;
   }
   
